@@ -1,44 +1,332 @@
-DiabeaCheck Backend API MLProyek ini bertujuan untuk mengembangkan model machine learning berbasis TensorFlow dan Keras untuk memprediksi risiko diabetes berdasarkan parameter fisiologis. Model ini menggunakan Multilayer Perceptron (MLP) yang telah dilatih dan diintegrasikan dengan FastAPI untuk menyediakan endpoint prediksi.Fitur UtamaModel Klasifikasi Diabetes:Memprediksi kemungkinan seseorang menderita diabetes berdasarkan input data seperti Age, BMI, Glucose, Insulin, dan BloodPressure.Menggunakan model MLP yang telah dilatih sebelumnya.Preprocessing Data Otomatis:Melakukan penskalaan data input menggunakan StandardScaler yang telah dilatih sebelumnya untuk memastikan performa model yang optimal.Endpoint API Sederhana:Menyediakan endpoint /predict/ yang mudah digunakan untuk integrasi dengan aplikasi frontend atau layanan lainnya.Informasi Model dan DataModel ini dilatih menggunakan dataset yang relevan untuk prediksi diabetes, dengan fitur-fitur seperti Usia, BMI, Glukosa, Insulin, dan Tekanan Darah. Detail lebih lanjut tentang proses pelatihan dapat ditemukan di Jupyter Notebook capstone_diabeacheck.ipynb.Struktur BerkasDiabeaCheck/
-├── app.py
-├── model_artifacts/
-│   ├── diabetes_mlp_model.h5
-│   └── scaler.joblib
-├── capstone_diabeacheck.ipynb
-├── inference.ipynb
-└── requirements.txt
-app.py: Aplikasi utama FastAPI yang menangani loading model dan endpoint prediksi.model_artifacts/: Direktori yang berisi artefak model dan scaler yang telah dilatih.diabetes_mlp_model.h5: Model MLP yang telah dilatih (TensorFlow/Keras).scaler.joblib: Objek StandardScaler yang telah dilatih untuk penskalaan data.capstone_diabeacheck.ipynb: Jupyter Notebook yang digunakan untuk melatih dan mengevaluasi model.inference.ipynb: Jupyter Notebook yang mendemonstrasikan cara melakukan inferensi dengan model yang telah dilatih secara lokal.requirements.txt: Daftar dependensi Python yang diperlukan.Langkah-langkah InstalasiKompatibilitas Python: Pastikan Python >= 3.8Clone repositori ini:git clone https://github.com/Alpii21/Capstonediabeacheck.git
-cd Capstonediabeacheck/DiabeaCheck # Navigasi ke direktori proyek
-Instal dependensi:pip install -r requirements.txt
-Jalankan notebook (opsional, untuk melihat proses pelatihan atau inferensi lokal):jupyter notebook capstone_diabeacheck.ipynb
-ataujupyter notebook inference.ipynb
-PenggunaanMenjalankan Aplikasi API:Mulai server FastAPI menggunakan Uvicorn:uvicorn app:app --host 0.0.0.0 --port 8000
-Aplikasi akan tersedia di http://your-ip:8000.Menggunakan Endpoint API (POST /predict/):Deskripsi: Memprediksi risiko diabetes berdasarkan parameter input yang diberikan.Contoh Request Body:{
+# DiabeaCheck Backend API ML
+
+![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10+-orange.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.103+-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+DiabeaCheck Backend API ML adalah sistem machine learning berbasis TensorFlow dan Keras yang dirancang untuk memprediksi risiko diabetes berdasarkan parameter fisiologis. Proyek ini menggunakan Multilayer Perceptron (MLP) yang telah dilatih dan diintegrasikan dengan FastAPI untuk menyediakan endpoint prediksi yang mudah digunakan.
+
+## 📋 Daftar Isi
+
+- [Fitur Utama](#-fitur-utama)
+- [Informasi Model dan Data](#-informasi-model-dan-data)
+- [Struktur Proyek](#-struktur-proyek)
+- [Instalasi](#-instalasi)
+- [Penggunaan](#-penggunaan)
+- [API Documentation](#-api-documentation)
+- [Cara Kerja](#-cara-kerja)
+- [Dependensi](#-dependensi)
+- [Development](#-development)
+- [Kontribusi](#-kontribusi)
+- [Lisensi](#-lisensi)
+
+## 🚀 Fitur Utama
+
+### 🔬 Model Klasifikasi Diabetes
+- Memprediksi kemungkinan seseorang menderita diabetes berdasarkan parameter:
+  - **Age** (Usia)
+  - **BMI** (Body Mass Index)
+  - **Glucose** (Kadar Glukosa)
+  - **Insulin** (Kadar Insulin)
+  - **BloodPressure** (Tekanan Darah)
+- Menggunakan model MLP (Multilayer Perceptron) yang telah dioptimasi
+
+### ⚙️ Preprocessing Data Otomatis
+- Penskalaan data input menggunakan `StandardScaler` yang telah dilatih
+- Memastikan performa model yang optimal dan konsisten
+- Validasi input data secara otomatis
+
+### 🌐 API Endpoint Sederhana
+- RESTful API dengan FastAPI
+- Endpoint `/predict/` yang mudah diintegrasikan
+- Response format JSON yang terstruktur
+- Error handling yang comprehensive
+
+## 📊 Informasi Model dan Data
+
+Model ini dilatih menggunakan dataset diabetes dengan teknik machine learning terdepan. Proses pelatihan mencakup:
+
+- **Algoritma**: Multilayer Perceptron (MLP)
+- **Framework**: TensorFlow/Keras
+- **Preprocessing**: StandardScaler untuk normalisasi data
+- **Evaluasi**: Akurasi, Precision, Recall, dan F1-Score
+
+Detail lengkap proses pelatihan dan evaluasi dapat ditemukan di `capstone_diabeacheck.ipynb`.
+
+## 📁 Struktur Proyek
+
+```
+DiabeaCheck/
+├── app.py                           # Aplikasi utama FastAPI
+├── model_artifacts/                 # Artefak model dan preprocessor
+│   ├── diabetes_mlp_model.h5       # Model MLP terlatih
+│   └── scaler.joblib                # StandardScaler terlatih
+├── capstone_diabeacheck.ipynb       # Notebook pelatihan model
+├── inference.ipynb                  # Notebook demonstrasi inferensi
+├── requirements.txt                 # Dependensi Python
+└── README.md                        # Dokumentasi proyek
+```
+
+### Deskripsi File
+
+| File | Deskripsi |
+|------|-----------|
+| `app.py` | Aplikasi utama FastAPI dengan endpoint prediksi |
+| `diabetes_mlp_model.h5` | Model MLP yang telah dilatih (TensorFlow/Keras) |
+| `scaler.joblib` | Objek StandardScaler untuk penskalaan data |
+| `capstone_diabeacheck.ipynb` | Notebook pelatihan dan evaluasi model |
+| `inference.ipynb` | Demonstrasi inferensi model secara lokal |
+| `requirements.txt` | Daftar dependensi yang diperlukan |
+
+## 🛠️ Instalasi
+
+### Persyaratan Sistem
+- **Python**: >= 3.8
+- **RAM**: Minimum 4GB (Recommended 8GB)
+- **Storage**: Minimum 2GB free space
+
+### Langkah Instalasi
+
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/Alpii21/Capstonediabeacheck.git
+   cd Capstonediabeacheck/DiabeaCheck
+   ```
+
+2. **Buat Virtual Environment** (Recommended)
+   ```bash
+   python -m venv venv
+   
+   # Windows
+   venv\Scripts\activate
+   
+   # macOS/Linux
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Verifikasi Instalasi**
+   ```bash
+   python -c "import tensorflow as tf; print(f'TensorFlow version: {tf.__version__}')"
+   ```
+
+## 🚀 Penggunaan
+
+### Menjalankan Server API
+
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+
+**Server akan tersedia di:** `http://localhost:8000`
+
+**API Documentation:** `http://localhost:8000/docs`
+
+### Menjalankan Jupyter Notebooks
+
+**Untuk melihat proses pelatihan:**
+```bash
+jupyter notebook capstone_diabeacheck.ipynb
+```
+
+**Untuk demonstrasi inferensi lokal:**
+```bash
+jupyter notebook inference.ipynb
+```
+
+## 📖 API Documentation
+
+### Endpoint: `POST /predict/`
+
+**Deskripsi:** Memprediksi risiko diabetes berdasarkan parameter fisiologis
+
+#### Request Body
+```json
+{
   "Age": 45,
   "BMI": 28.5,
   "Glucose": 120.0,
   "Insulin": 50.0,
   "BloodPressure": 80
 }
-Contoh Response Sukses:{
+```
+
+#### Response Format
+
+**Prediksi Tidak Diabetes:**
+```json
+{
   "prediction": 0,
   "probability": 0.12345,
   "label": "Tidak Diabetes"
 }
-atau{
+```
+
+**Prediksi Diabetes:**
+```json
+{
   "prediction": 1,
   "probability": 0.87654,
   "label": "Diabetes"
 }
-Penanganan Kesalahan: Mengembalikan pesan kesalahan (HTTP 500) jika artefak model tidak ditemukan atau (HTTP 422) jika input tidak valid.Cara KerjaPrediksi DiabetesData input (Age, BMI, Glucose, Insulin, BloodPressure) diterima melalui endpoint POST /predict/.Data input diskalakan menggunakan scaler.joblib yang telah dimuat saat aplikasi startup.Data yang sudah diskalakan kemudian diberikan ke diabetes_mlp_model.h5 untuk mendapatkan probabilitas prediksi.Probabilitas tersebut dikonversi menjadi label biner (0 untuk "Tidak Diabetes" atau 1 untuk "Diabetes") berdasarkan ambang batas 0.5, dan juga menyediakan label teks ("Diabetes" atau "Tidak Diabetes").DependensiProyek ini menggunakan dependensi berikut, yang tercantum dalam requirements.txt:fastapi>=0.103.0
-pydantic>=2.0.0
-joblib>=1.3.0
-numpy>=1.26.0
-tensorflow>=2.10.0
-pandas>=2.0.0
-scikit-learn>=1.3.0
-matplotlib>=3.8.0
-seaborn>=0.13.0
-imblearn>=0.11.0
-uvicorn>=0.23.0
-Instal semua dependensi menggunakan:pip install -r requirements.txt
-KontributorProyek ini dikembangkan oleh:[Nama Anda/Tim Anda] | Machine Learning Engineer
+```
+
+#### Error Responses
+
+**HTTP 422 - Validation Error:**
+```json
+{
+  "detail": [
+    {
+      "loc": ["body", "Age"],
+      "msg": "field required",
+      "type": "value_error.missing"
+    }
+  ]
+}
+```
+
+**HTTP 500 - Server Error:**
+```json
+{
+  "detail": "Model artifacts not found or corrupted"
+}
+```
+
+### Testing API dengan cURL
+
+```bash
+curl -X POST "http://localhost:8000/predict/" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Age": 45,
+    "BMI": 28.5,
+    "Glucose": 120.0,
+    "Insulin": 50.0,
+    "BloodPressure": 80
+  }'
+```
+
+## ⚡ Cara Kerja
+
+### Pipeline Prediksi
+
+1. **Input Validation**: Data input divalidasi menggunakan Pydantic models
+2. **Data Preprocessing**: Input diskalakan menggunakan `scaler.joblib`
+3. **Model Inference**: Data yang sudah diskalakan diproses oleh `diabetes_mlp_model.h5`
+4. **Post-processing**: Probabilitas dikonversi menjadi prediksi binary dan label teks
+5. **Response**: Hasil dikembalikan dalam format JSON
+
+### Threshold Decision
+
+- **Probability >= 0.5**: Diabetes (Label: "Diabetes")
+- **Probability < 0.5**: Tidak Diabetes (Label: "Tidak Diabetes")
+
+## 📦 Dependensi
+
+```txt
+fastapi>=0.103.0          # Web framework untuk API
+pydantic>=2.0.0           # Data validation
+joblib>=1.3.0             # Model serialization
+numpy>=1.26.0             # Numerical computing
+tensorflow>=2.10.0        # Machine learning framework
+pandas>=2.0.0             # Data manipulation
+scikit-learn>=1.3.0       # Machine learning utilities
+matplotlib>=3.8.0         # Data visualization
+seaborn>=0.13.0           # Statistical visualization
+imblearn>=0.11.0          # Imbalanced dataset handling
+uvicorn>=0.23.0           # ASGI server
+```
+
+### Instalasi Dependensi
+```bash
+pip install -r requirements.txt
+```
+
+## 🔬 Development
+
+### Struktur Development
+
+```bash
+# Aktivasi virtual environment
+source venv/bin/activate  # Linux/macOS
+# atau
+venv\Scripts\activate     # Windows
+
+# Install development dependencies
+pip install -r requirements.txt
+
+# Jalankan server dalam mode development
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Testing
+
+**Manual Testing:**
+- Gunakan FastAPI interactive docs di `http://localhost:8000/docs`
+- Test dengan berbagai kombinasi input parameter
+
+**Unit Testing:**
+```bash
+# Tambahkan pytest ke requirements untuk testing
+pip install pytest pytest-asyncio
+
+# Jalankan tests (jika ada)
+pytest tests/
+```
+
+### Monitoring Performance
+
+```python
+# Contoh monitoring latency
+import time
+
+start_time = time.time()
+# ... prediksi ...
+end_time = time.time()
+print(f"Prediction time: {end_time - start_time:.4f} seconds")
+```
+
+## 🤝 Kontribusi
+
+Kami menyambut kontribusi dari komunitas! Untuk berkontribusi:
+
+### Guidelines
+
+1. **Fork** repository ini
+2. **Create branch** untuk fitur baru (`git checkout -b feature/AmazingFeature`)
+3. **Commit** perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** ke branch (`git push origin feature/AmazingFeature`)
+5. **Create Pull Request**
+
+### Contribution Areas
+
+- **Model Improvement**: Optimasi akurasi dan performa model
+- **API Enhancement**: Penambahan fitur dan endpoint baru
+- **Documentation**: Perbaikan dan penambahan dokumentasi
+- **Testing**: Penambahan unit tests dan integration tests
+- **Performance**: Optimasi kecepatan inference dan memory usage
+
+### Code Standards
+
+- Gunakan **PEP 8** untuk Python code style
+- Tambahkan **docstrings** untuk fungsi dan class
+- **Type hints** untuk parameter dan return values
+- **Error handling** yang comprehensive
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+```
+MIT License
+
+Copyright (c) 2024 DiabeaCheck Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files
