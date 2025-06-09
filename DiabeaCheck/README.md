@@ -1,11 +1,11 @@
-# DiabeaCheck Backend API ML
+# DiabeaCheck Multi Layer Perceptron dan Integrasi API ML
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10+-orange.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.103+-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-DiabeaCheck Backend API ML adalah sistem machine learning berbasis TensorFlow dan Keras yang dirancang untuk memprediksi risiko diabetes berdasarkan parameter fisiologis. Proyek ini menggunakan Multilayer Perceptron (MLP) yang telah dilatih dan diintegrasikan dengan FastAPI untuk menyediakan endpoint prediksi yang mudah digunakan.
+DiabeaCheck Multi Layer Perceptron dan Integrasi API ML adalah sistem machine learning berbasis TensorFlow dan Keras yang dirancang untuk memprediksi risiko diabetes berdasarkan parameter fisiologis. Proyek ini menggunakan Multilayer Perceptron (MLP) yang telah dilatih dan diintegrasikan dengan FastAPI untuk menyediakan endpoint prediksi yang mudah digunakan.
 
 ## 📋 Daftar Isi
 
