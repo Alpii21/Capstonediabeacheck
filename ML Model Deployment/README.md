@@ -319,6 +319,14 @@ Kami menyambut kontribusi dari komunitas! Untuk berkontribusi:
 - **Type hints** untuk parameter dan return values
 - **Error handling** yang comprehensive
 
+## 👥 Tim Pengembang
+
+### 🔎 Machine Learning Team
+
+* **Alfiah** (MC796D5X0076) – *Politeknik Baja Tegal*
+* **Elaine Agustina** (MC834D5X1658) – *Universitas Pelita Harapan*
+* **Rafly Ashraffi Rachmat** (MC796D5Y0101) – *Politeknik Baja Tegal*
+
 ## 📄 Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).
@@ -326,7 +334,7 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 ```
 MIT License
 
-Copyright (c) 2024 DiabeaCheck Team
+Copyright (c) 2025 DiabeaCheck Team
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files
