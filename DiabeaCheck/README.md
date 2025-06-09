@@ -1,6 +1,6 @@
-# Deteksi Diabetes dengan Neural Network
+# DiabeaCheck Multi Layer Perceptron
 
-Proyek ini menggunakan dataset diabetes dari Pima Indians dan membangun model prediksi menggunakan Neural Network (MLP) dengan TensorFlow/Keras. Data di-preprocess dengan standardisasi dan penyeimbangan kelas menggunakan SMOTE.
+Proyek ini menggunakan dataset diabetes dari Pima Indians dan NHANES untuk membangun model prediksi menggunakan Neural Network (MLP) dengan TensorFlow/Keras. Data di-preprocess dengan standardisasi dan penyeimbangan kelas menggunakan SMOTE.
 
 ## Fitur Utama
 
@@ -12,8 +12,8 @@ Proyek ini menggunakan dataset diabetes dari Pima Indians dan membangun model pr
 ## Struktur File
 
 * `deteksi_diabetes.ipynb`: Notebook utama yang memuat seluruh proses dari preprocessing hingga pelatihan dan evaluasi model.
-* `diabetes.csv`: Dataset yang digunakan (pastikan file ini tersedia di direktori kerja).
-* `model_diabetes.h5`: Model hasil pelatihan.
+* `diabetes.csv dan NHANES_age_prediction.csv`: Dataset yang digunakan (pastikan file ini tersedia di direktori kerja).
+* `diabetes_mlp_model.h5`: Model hasil pelatihan.
 
 ## Instalasi dan Persiapan
 
