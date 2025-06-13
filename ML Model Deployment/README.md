@@ -185,6 +185,8 @@ Kami menyambut kontribusi dari komunitas! Untuk berkontribusi:
 * Tangani error dengan baik
 
 ---
+## Contoh Deployment URL Versi Jadi
+**URL deployment railway** : https://capstone-diabeacheck.up.railway.app/
 
 ## 👥 Tim Pengembang
 
