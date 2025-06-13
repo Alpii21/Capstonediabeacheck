@@ -1,4 +1,9 @@
-# DiabeaCheck 🌿
+# DiabeaCheck Multi Layer Perceptron dan Integrasi API ML
+
+![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10+-orange.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.103+-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Sistem Prediksi Risiko Diabetes berbasis Machine Learning (MLP) yang di-deploy menggunakan FastAPI dan Docker. Proyek ini bertujuan untuk memberikan deteksi dini terhadap potensi diabetes berdasarkan data input kesehatan pengguna seperti usia, BMI, kadar glukosa, dan lainnya.
 
