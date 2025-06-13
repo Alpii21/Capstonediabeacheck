@@ -1,31 +1,10 @@
-# ================================
-# Python Bytecode & Cache
-# ================================
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
-*.pyd
-
-# ================================
-# Virtual Environments
-# ================================
-venv/
-.env
-.env.*
-
-# ================================
-# Logs & Temporary Files
-# ================================
+*.pkl
 *.log
-*.sqlite3
-.DS_Store
-
-# ================================
-# Dataset Lokal
-# ================================
+.env
+venv/
+.git/
+.gitignore
 data/
-
-# ================================
-# Docker & Compose Overrides
-# ================================
-docker-compose.override.yml
